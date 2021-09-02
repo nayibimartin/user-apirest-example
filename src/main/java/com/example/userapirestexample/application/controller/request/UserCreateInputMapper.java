@@ -2,9 +2,9 @@ package com.example.userapirestexample.application.controller.request;
 
 import com.example.userapirestexample.application.user.Mapper;
 import com.example.userapirestexample.domain.services.input.UserCreateInput;
-import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
+@Component
 public class UserCreateInputMapper implements Mapper<UserCreateRequest, UserCreateInput> {
 
 	@Override

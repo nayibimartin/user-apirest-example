@@ -1,11 +1,10 @@
 package com.example.userapirestexample.domain.services.input;
 
-import com.example.userapirestexample.application.controller.request.UserCreateRequest;
 import com.example.userapirestexample.application.user.Mapper;
 import com.example.userapirestexample.domain.entity.User;
-import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
+@Component
 public class UserCreateMapper implements Mapper<UserCreateInput, User> {
 
 	@Override

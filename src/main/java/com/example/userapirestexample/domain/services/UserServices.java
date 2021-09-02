@@ -5,17 +5,9 @@ import com.example.userapirestexample.domain.entity.User;
 import com.example.userapirestexample.domain.repository.UserRepository;
 import com.example.userapirestexample.domain.services.input.UserCreateInput;
 import com.example.userapirestexample.exception.ResourceCreateException;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import javax.transaction.Transactional;
-
-@RequiredArgsConstructor
-@Transactional
-@Slf4j
 @Service
 public class UserServices {
 
@@ -23,9 +15,18 @@ public class UserServices {
 
 	private final Mapper<UserCreateInput, User> userMapper;
 
+	@Autowired
+	public UserServices(
+		UserRepository repository,
+		Mapper<UserCreateInput, User> userMapper
+	) {
+		this.repository = repository;
+		this.userMapper = userMapper;
+	}
+
 	public User create(UserCreateInput input) throws ResourceCreateException {
 
-		return repository.save(this.userMapper.map(input));
+		return repository.create(this.userMapper.map(input));
 
 	}
 
