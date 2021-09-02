@@ -24,7 +24,7 @@ paths:
       summary: Create new user
       operationId: create
       requestBody:
-        $ref: '#/components/requestBodies/CreateUserRequest'
+        $ref: '#/components/requestBodies/UserCreateRequest'
       responses:
         '201':
           description: Successful created user.
@@ -107,7 +107,7 @@ paths:
       summary: Update user
       operationId: update
       requestBody:
-        $ref: '#/components/requestBodies/UpdateUserRequest'
+        $ref: '#/components/requestBodies/UserUpdateRequest'
       responses:
         '201':
           description: Successful updated user.
@@ -189,7 +189,7 @@ paths:
                 $ref: '#/components/responses/ErrorResponse'
 components:
   requestBodies:
-    CreateUserRequest:
+    UserCreateRequest:
       content:
         application/json:
           schema:
@@ -219,7 +219,7 @@ components:
                 type: string
               active:
                 type: boolean
-    UpdateUserRequest:
+    UserUpdateRequest:
       content:
         application/json:
           schema:
