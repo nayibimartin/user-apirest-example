@@ -23,7 +23,6 @@ import javax.validation.Valid;
 public class UserApiController implements UsersApi {
 
 	private final UserServices userServices;
-
 	private final Mapper<UserCreateRequest, UserCreateInput> userCreateMapper;
 
 	@Override
