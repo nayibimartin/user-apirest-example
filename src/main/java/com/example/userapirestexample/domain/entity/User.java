@@ -50,5 +50,5 @@ public class User {
 	private String country;
 
 	@NotNull
-	private String active;
+	private boolean active;
 }

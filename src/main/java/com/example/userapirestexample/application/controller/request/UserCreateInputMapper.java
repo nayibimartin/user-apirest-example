@@ -16,6 +16,6 @@ public class UserCreateInputMapper implements Mapper<UserCreateRequest, UserCrea
 			.setLanguage(request.getLanguage())
 			.setRank(request.getRank())
 			.setCountry(request.getCountry())
-			.setActive(request.getActive());
+			.setActive(request.isActive());
 	}
 }

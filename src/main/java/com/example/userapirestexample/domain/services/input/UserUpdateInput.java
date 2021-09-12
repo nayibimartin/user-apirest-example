@@ -3,15 +3,9 @@ package com.example.userapirestexample.domain.services.input;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
-import javax.validation.constraints.NotNull;
-
 @Accessors(chain = true)
 @Data
-public class UserCreateInput {
-
-	private String firstname;
-
-	private String lastname;
+public class UserUpdateInput {
 
 	private int age;
 
@@ -22,4 +16,5 @@ public class UserCreateInput {
 	private String country;
 
 	private boolean active;
+
 }

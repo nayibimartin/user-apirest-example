@@ -2,16 +2,12 @@ package com.example.userapirestexample.domain.services.input;
 
 import com.example.userapirestexample.application.user.Mapper;
 import com.example.userapirestexample.domain.entity.User;
-import org.springframework.stereotype.Component;
 
-@Component
-public class UserCreateMapper implements Mapper<UserCreateInput, User> {
+public class UserUpdateMapper implements Mapper<UserUpdateInput, User> {
 
 	@Override
-	public User map(UserCreateInput input) {
+	public User map(UserUpdateInput input) {
 		return new User()
-			.setFirstname(input.getFirstname())
-			.setLastname(input.getLastname())
 			.setAge(input.getAge())
 			.setLanguage(input.getLanguage())
 			.setRank(input.getRank())
