@@ -1,8 +1,10 @@
 package com.example.userapirestexample.application.controller;
 
 import com.example.userapirestexample.application.controller.request.UserCreateRequest;
+import com.example.userapirestexample.application.controller.request.UserUpdateRequest;
 import com.example.userapirestexample.domain.entity.User;
 import com.example.userapirestexample.domain.exception.ValidationException;
+import com.example.userapirestexample.domain.services.input.UserUpdateInput;
 import com.example.userapirestexample.exception.ErrorResponse;
 import com.example.userapirestexample.exception.ResourceCreateException;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,5 +32,19 @@ public interface UsersApi {
 
 		@ApiResponse(responseCode = "403", description = "Resource forbidden", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
 	})
-	ResponseEntity<User> create( @RequestBody(description = "New user", required = true) UserCreateRequest userCreateRequest) throws ResourceCreateException, ValidationException;
+	ResponseEntity<User> create(@RequestBody(description = "New user", required = true) UserCreateRequest userCreateRequest) throws ResourceCreateException, ValidationException;
+
+	@Operation(
+		summary = "Update user",
+		description = "Update user",
+		tags = {"user"})
+	@ApiResponses(value = {
+		@ApiResponse(responseCode = "201", description = "Successful updated user."),
+
+		@ApiResponse(responseCode = "400", description = "Validation exception.", content = @Content(mediaType = "application/json", schema = @Schema(/*implementation = ValidationErrorResponse.class*/))),
+
+		@ApiResponse(responseCode = "403", description = "Resource forbidden", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class)))
+	})
+	ResponseEntity<User> update(@RequestBody( description = "Update user", required = true) UserUpdateRequest userUpdateRequest) throws ResourceCreateException, ValidationException;
+
 }

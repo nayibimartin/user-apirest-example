@@ -225,18 +225,12 @@ components:
           schema:
             type: object
             required:
-              - firstname
-              - lastname
               - age
               - language
               - rank
               - country
               - active
             properties:
-              firstname:
-                type: string
-              lastname:
-                type: string
               age:
                 type: integer
                 format: int32
@@ -396,3 +390,12 @@ components:
           format: int32
         country:
           type: string
+
+
+
+
+
+
+
+
+
